@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipDesk Studio · Instagram sign-in</title>
+<style>body{font-family:system-ui,sans-serif;max-width:520px;margin:15vh auto;padding:0 16px;color:#222}</style>
+</head>
+<body>
+<h1>Finishing Instagram sign-in…</h1>
+<p id="m">Returning you to ClipDesk Studio on this computer.</p>
+<script>
+// Instagram requires an https redirect; the desktop app listens on localhost. Pass the query (code/state/error) through unchanged.
+var q = window.location.search || "";
+if (q) { window.location.replace("http://localhost:3455/callback/" + q); }
+else { document.getElementById("m").textContent = "No sign-in data received. Close this tab and start again from ClipDesk Studio."; }
+</script>
+</body>
+</html>
